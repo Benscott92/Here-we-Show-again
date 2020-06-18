@@ -28,6 +28,7 @@ for(let index = 1; index <= 20; index++){
     }else{
     kata1.append(index + ',')
   }
+//   kata1.append(index + ' ')
 }
 
 // Kata 2 Display the even numbers from 1 to 20. (2, 4, 6, …, 18, 20)
@@ -81,6 +82,8 @@ let kataFiveHeading = document.createElement('h3')
 kataFiveHeading.append('Kata 5')
 kata5.append(kataFiveHeading)
 kataList.append(kata5)
+
+
 for(let index = 1; index <= 100; index++){
     const indexIsPerfectSquare = Number.isInteger(Math.sqrt(index))
     if(indexIsPerfectSquare && index != 100){
@@ -259,6 +262,8 @@ for(let index = 0; index < sampleArray.length; index++){
 kata17.append(smallestElement)
 
 
+// kata17.append(Math.min(...sampleArray)) <<shorter solution
+
 // Kata 18 Display the largest element in sampleArray.
 let kata18 = document.createElement('div')
 let kataEighteenHeading = document.createElement('h3')
@@ -273,10 +278,10 @@ for(let index = 0; index < sampleArray.length; index++){
 }
 kata18.append(largestElement)
 
+// kata18.append(Math.max(...sampleArray)) << shorter solution
 
 // Display 20 solid gray rectangles, each 20px high and 100px wide.
 let kata19 = document.createElement('div')
-kata19.className = 'kata19container'
 let kataNineteenHeading = document.createElement('h3')
 kataNineteenHeading.append('Kata 19')
 kata19.append(kataNineteenHeading)
@@ -289,12 +294,76 @@ for(let index = 0; index < 20; index ++){
 }
 
 // Display 20 solid gray rectangles, each 20px high, with widths ranging evenly from 105px to 200px (remember #4, above).
+let kata20 = document.createElement('div')
+let kataTwentyHeading = document.createElement('h3')
+kataTwentyHeading.append('Kata 20')
+kata20.append(kataTwentyHeading)
+kataList.append(kata20)
 
+let width20 = 105
+
+for(let index = 0; index < 20; index ++){
+    let rectangle = document.createElement('div')
+    rectangle.className = 'kata19'
+    rectangle.style.width = width20 + 'px'
+    kata20.append(rectangle)
+    width20+= 5
+}
 
 // Display 20 solid gray rectangles, each 20px high, with widths in pixels given by the 20 elements of sampleArray.
 
 
+let kata21 = document.createElement('div')
+let kataTwentyoneHeading = document.createElement('h3')
+kataTwentyoneHeading.append('Kata 21')
+kata21.append(kataTwentyoneHeading)
+kataList.append(kata21)
+
+for(let index = 0; index < 20; index ++){
+    let width21 = sampleArray[index]
+    let rectangle = document.createElement('div')
+    rectangle.className = 'kata19'
+    rectangle.style.width = width21 + 'px'
+    kata21.append(rectangle)
+    
+}
+
 // As in #21, but alternate colors so that every other rectangle is red.
 
 
+let kata22 = document.createElement('div')
+let kataTwentytwoHeading = document.createElement('h3')
+kataTwentytwoHeading.append('Kata 22')
+kata22.append(kataTwentytwoHeading)
+kataList.append(kata22)
+
+for(let index = 0; index < 20; index ++){
+    let width21 = sampleArray[index]
+    let rectangle = document.createElement('div')
+    rectangle.className = 'kata19'
+    rectangle.style.width = width21 + 'px'
+    kata22.append(rectangle)
+    if(index % 2 != 0){
+        rectangle.style.backgroundColor = 'red'
+    }
+    
+}
 // As in #21, but color the rectangles with even widths red.
+
+
+let kata23 = document.createElement('div')
+let kataTwentythreeHeading = document.createElement('h3')
+kataTwentythreeHeading.append('Kata 23')
+kata23.append(kataTwentythreeHeading)
+kataList.append(kata23)
+
+for(let index = 0; index < 20; index ++){
+    let width21 = sampleArray[index]
+    let rectangle = document.createElement('div')
+    rectangle.className = 'kata19'
+    rectangle.style.width = width21 + 'px'
+    kata23.append(rectangle)
+    if(width21 % 2 === 0){
+        rectangle.style.backgroundColor = 'red'
+    }
+}
